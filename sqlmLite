@@ -5,7 +5,7 @@ system=(
   --level=5
   --risk=3
   --random-agent
-  --output-dir=/home/yaniv/Downloads/mission/
+  --output-dir=$HOME/Downloads/
   --dump-format=html
   --exclude-sysdbs
   --roles
@@ -14,6 +14,24 @@ system=(
   --current-db
 
  )
+
+ echo "saving results to: $HOME/Downloads/"
+ echo ""
+
+ echo "Running sqlmap with the following options:"
+for arg in "${system[@]}"; do
+  echo "  $arg"
+done
+echo ""
+
+echo "Running sqlmap with the following arguments:"
+for arg in "${args[@]}"; do
+  echo "  $arg"
+done
+echo "" 
+
+echo "----------------------------------------"
+
 if [[ "$@" == *"-reg"* ]]; then
   extra_args=()
   for arg in "${args[@]}"; do
