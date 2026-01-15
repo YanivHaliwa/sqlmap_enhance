@@ -17,7 +17,7 @@
 #
 # Dependencies:
 #   - waybackurls (for URL discovery)
-#   - sqlma (custom wrapper for sqlmap)
+#   - sqlml (custom wrapper for sqlmap)
 #   - grep, sed (for URL filtering)
 ###############################################################################
 
@@ -69,7 +69,7 @@ echo "Starting sqlmap scan..."
 # Phase 6: Vulnerability Testing
 # For each discovered URL, run the custom sqlma script with regular settings
 # The -reg flag is presumably a custom configuration for standard SQL injection tests
-cat final_urls.txt | xargs -I{} sqlmLite -reg -u "{}"
+cat final_urls.txt | xargs -I{} sqlml -reg -u "{}"
 
 # Script complete
 echo "SQLWay scan completed. Check for identified SQL injection vulnerabilities above."
